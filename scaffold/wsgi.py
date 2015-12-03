@@ -11,6 +11,12 @@ from scaffold.boot import fix_path
 fix_path()
 
 import os
+
+# http://stackoverflow.com/questions/25915164/django-1-7-on-app-engine-importerror-no-module-named-msvcrt
+on_appengine = os.environ.get('SERVER_SOFTWARE','').startswith('Development')
+if on_appengine and os.name == 'nt':
+    os.name = None
+
 from django.core.wsgi import get_wsgi_application
 from djangae.wsgi import DjangaeApplication
 from djangae.utils import on_production
