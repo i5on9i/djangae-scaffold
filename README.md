@@ -40,3 +40,16 @@ If you are on OS X and using Homebrew-ed Python, you might get the following err
 [install]
 prefix=
 ```
+
+
+## For Windows
+You need to insall pip and git first. Though you have already installed the pip, it's better to upgrade your pip with the command.
+    pip insatll --upgrae setuptools
+
+Then, set Git path on your %PATH%, for example
+    set path=%path%;c:\Program Files (x86)\Git\bin
+
+Now, do the following things
+- Run `./install_deps` (this will pip install requirements, and download the App Engine SDK)
+- Run `./rename_scaffold_app.py my_new_app_name` to rename the 'scaffold' app (and all references to it)
+
