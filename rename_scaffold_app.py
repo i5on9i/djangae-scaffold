@@ -37,6 +37,8 @@ def main(argv):
 
             removeAllPys(dirName, fileList)
             renameBak2Py(dirName, fileList)
+            os.rename(os.path.join(rootDir, defaultName),
+                      os.path.join(rootDir, projName))
             break
 
 
